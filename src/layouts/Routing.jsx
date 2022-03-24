@@ -6,10 +6,12 @@ import App from '@/layouts/App'
 // import AuthRoute from '@/layouts/AuthRoute'
 import NoAuthRoute from '@/layouts/NoAuthRoute'
 
+import PagesAuthSignup from '@/pages/auth/Signup'
+import PagesAuthLogin from '@/pages/auth/Login'
+
 import PagesHome from '@/pages/Home'
 import PagesAnother from '@/pages/Another'
 import PagesNotFound from '@/pages/NotFound'
-import PagesAuthSignup from '@/pages/auth/Signup'
 
 function Routing() {
   return (
@@ -21,6 +23,7 @@ function Routing() {
             <Route index element={<PagesHome />} />
 
             <Route path="/auth/signup" element={<NoAuthRoute><PagesAuthSignup /></NoAuthRoute>} />
+            <Route path="/auth/login" element={<NoAuthRoute><PagesAuthLogin /></NoAuthRoute>} />
 
             <Route path="/another" element={<PagesAnother />} />
             <Route path="*" element={<PagesNotFound />} />
