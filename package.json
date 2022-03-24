@@ -1,5 +1,5 @@
 {
-  "name": "[your_project_name_here]",
+  "name": "syp-guitars-frontend",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.jsx",
@@ -23,6 +23,7 @@
     "react-dom": "^17.0.2",
     "react-hot-loader": "^4.13.0",
     "react-router-dom": "^6.2.2",
+    "react-toastify": "^8.2.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {

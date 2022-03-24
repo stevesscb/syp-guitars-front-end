@@ -1,9 +1,16 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 
+import LayoutsNavbar from './Navbar'
+import LayoutsFooter from './Footer'
+
 function App() {
   return (
-    <Outlet />
+    <>
+      <LayoutsNavbar />
+      <Outlet />
+      <LayoutsFooter />
+    </>
   )
 }
 

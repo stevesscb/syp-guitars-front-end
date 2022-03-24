@@ -1,22 +1,33 @@
 import React from 'react'
 import { Routes, BrowserRouter, Route } from 'react-router-dom'
+import { AuthProvider } from '@/contexts/Auth'
 
 import App from '@/layouts/App'
+// import AuthRoute from '@/layouts/AuthRoute'
+import NoAuthRoute from '@/layouts/NoAuthRoute'
 
 import PagesHome from '@/pages/Home'
 import PagesAnother from '@/pages/Another'
 import PagesNotFound from '@/pages/NotFound'
+import PagesAuthSignup from '@/pages/auth/Signup'
 
 function Routing() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route index element={<PagesHome />} />
-          <Route path="/another" element={<PagesAnother />} />
-          <Route path="*" element={<PagesNotFound />} />
-        </Route>
-      </Routes>
+      <AuthProvider>
+        <Routes>
+
+          <Route path="/" element={<App />}>
+            <Route index element={<PagesHome />} />
+
+            <Route path="/auth/signup" element={<NoAuthRoute><PagesAuthSignup /></NoAuthRoute>} />
+
+            <Route path="/another" element={<PagesAnother />} />
+            <Route path="*" element={<PagesNotFound />} />
+          </Route>
+
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   )
 }
