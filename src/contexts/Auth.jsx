@@ -3,8 +3,7 @@ import axios from 'axios'
 import produce from 'immer'
 import { useNavigate } from 'react-router-dom'
 
-import { toast } from 'react-toastify'
-import { renderErrors } from './_utils'
+import { renderErrors } from '@/contexts/_utils'
 
 const AuthContext = createContext()
 
@@ -43,17 +42,7 @@ export function AuthProvider({ children }) {
         draft.data = resp.data.user
         navigation('/auth/login')
       } catch (err) {
-        switch (err.response.status) {
-          case 406: {
-            Object.entries(err.response.data).forEach((error) => {
-              toast.error(error[1])
-            })
-            break
-          }
-          default: {
-            toast.error('Something is wrong with server')
-          }
-        }
+        renderErrors(err)
       }
     }))
   }

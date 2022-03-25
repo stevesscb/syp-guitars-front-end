@@ -14,8 +14,8 @@ export const renderErrors = (err) => {
       break
     }
     case 406: {
-      err.response.data.errors.forEach((error) => {
-        toast.error(error.msg)
+      Object.entries(err.response.data).forEach((error) => {
+        toast.error(error[1])
       })
       break
     }
