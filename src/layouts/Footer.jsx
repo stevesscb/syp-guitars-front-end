@@ -9,7 +9,7 @@ function LayoutsFooter() {
       <Button as={NavLink} to="/" variant="secondary" size="sm" active>
         Back
       </Button>
-      <p>Copy Right 2021</p>
+      <p className="m-5 fst-italic">Copy Right 2021</p>
     </footer>
   )
 }

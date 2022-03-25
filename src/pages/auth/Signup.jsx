@@ -4,19 +4,17 @@ import React from 'react'
 import { useAuth } from '@/contexts/Auth'
 
 import FormsAuthSignup from '@/forms/auth/signup'
+import LayoutsHeader from '@/layouts/Header'
 
 function PagesAuthSignup() {
   const { signup } = useAuth()
 
   return (
     <div id="pages-auth-signup" className="container">
-      <header className="text-center">
-        <h1>SYP GUITARS</h1>
-        <h4>HK's Pre Owned Guitar Marketplace</h4>
-      </header>
+      <LayoutsHeader />
       <div className="row">
         <div className="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-          <h6 className="text-center">Join in</h6>
+          <h6 className="text-center">Join in!</h6>
 
           <FormsAuthSignup
             onSubmit={signup}

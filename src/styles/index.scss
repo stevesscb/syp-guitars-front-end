@@ -1,3 +1,22 @@
 @import "~bootstrap/scss/bootstrap";
 
 @import '~react-toastify/dist/ReactToastify';
+
+header h1 {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 4em;
+}
+
+.carousel-item {
+  background-color: black;
+}
+
+@media (max-width: 768px) {
+  #carousel-image {
+    height: 400px;
+  }
+
+  header h1{
+    font-size: 2em;
+  }
+}
