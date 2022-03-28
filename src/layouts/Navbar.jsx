@@ -18,8 +18,8 @@ function LayoutsNavbar() {
             <Nav.Link as={NavLink} to="/auth/login">Log in</Nav.Link>
             <Nav.Link as={NavLink} to="/my-guitars/new">Post Guitar</Nav.Link>
             <NavDropdown title="Guitars" id="basic-nav-dropdown">
-              <NavDropdown.Item as={NavLink} to="/">Electric</NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/">Acoustic</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/guitars/electric">Electric</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/guitars/acoustic">Acoustic</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

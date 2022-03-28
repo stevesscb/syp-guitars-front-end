@@ -16,7 +16,6 @@ function PagesHome() {
         <strong>Happy trading!</strong>
       </div>
     </div>
-
   )
 }
 

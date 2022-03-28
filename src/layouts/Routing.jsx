@@ -9,6 +9,9 @@ import NoAuthRoute from '@/layouts/NoAuthRoute'
 import PagesAuthSignup from '@/pages/auth/Signup'
 import PagesAuthLogin from '@/pages/auth/Login'
 
+import PagesGuitarsElectric from '@/pages/guitars/electric'
+import PagesGuitarsAcoustic from '@/pages/guitars/acoustic'
+
 import PagesHome from '@/pages/Home'
 import PagesAnother from '@/pages/Another'
 import PagesNotFound from '@/pages/NotFound'
@@ -21,6 +24,8 @@ function Routing() {
 
           <Route path="/" element={<App />}>
             <Route index element={<PagesHome />} />
+            <Route path="/guitars/electric" element={<PagesGuitarsElectric />} />
+            <Route path="/guitars/acoustic" element={<PagesGuitarsAcoustic />} />
 
             <Route path="/auth/signup" element={<NoAuthRoute><PagesAuthSignup /></NoAuthRoute>} />
             <Route path="/auth/login" element={<NoAuthRoute><PagesAuthLogin /></NoAuthRoute>} />
