@@ -14,7 +14,7 @@ function PagesAuthSignup() {
       <LayoutsHeader />
       <div className="row">
         <div className="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-          <h6 className="text-center">Join in!</h6>
+          <h6 className="text-center" style={{ fontFamily: 'Gloria Hallelujah', fontSize: '2em' }}>Join in!</h6>
 
           <FormsAuthSignup
             onSubmit={signup}
