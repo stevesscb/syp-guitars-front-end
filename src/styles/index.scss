@@ -12,15 +12,15 @@
   background-color: black;
 }
 
-body {
-background-image: url(/src/public/images/bg2.jpg);
-background-position: center;
-background-size: cover;
-background-repeat: no-repeat;
+.bg-overlay {
+  background-image: url(/src/public/images/bg2.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.bg-overlay {
-background-color:rgba(226, 234, 242, 0.9);
+#root {
+  background-color:rgba(226, 234, 242, 0.8);
 }
 
 @media (max-width: 768px) {

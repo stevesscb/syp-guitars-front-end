@@ -11,7 +11,6 @@ import Button from 'react-bootstrap/Button'
 
 function ComponentsCards() {
   return (
-
     <Row xs={1} md={3} className="g-4">
       {Array.from({ length: 6 }).map((_, idx) => (
         <Col className="d-flex justify-content-center">
@@ -27,7 +26,7 @@ function ComponentsCards() {
               </ListGroup>
             </Card.Body>
             <Card.Body style={{ backgroundColor: '#ECF0F1' }}>
-              <Button as={NavLink} to="/" variant="success" size="sm" active>
+              <Button as={NavLink} to=":id" variant="success" size="sm" active>
                 More...
               </Button>
             </Card.Body>

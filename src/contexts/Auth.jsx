@@ -13,6 +13,8 @@ export function AuthProvider({ children }) {
   const navigation = useNavigate()
   const [showState, setShowState] = useState(initialShow)
 
+  // also. every time you refresh, you need to call getMyProfile.
+  // check the lab solution for more info
   const getMyProfile = async (updateInBackground) => {
     if (!updateInBackground) setShowState(initialShow)
     setShowState(await produce(updateInBackground ? initialShow : showState, async (draft) => {
@@ -21,7 +23,7 @@ export function AuthProvider({ children }) {
           method: 'GET',
           url: ''
         })
-        draft.data = resp.data.user
+        draft.data = resp.data
       } catch (err) {
         draft.error = err.response.data
       } finally {
@@ -30,6 +32,7 @@ export function AuthProvider({ children }) {
     }))
   }
 
+  // your resp.data is the user. you don't need to use resp.data.user
   const signup = async (data) => {
     setShowState(await produce(showState, async (draft) => { draft.authenticating = true }))
     setShowState(await produce(showState, async (draft) => {
@@ -39,7 +42,7 @@ export function AuthProvider({ children }) {
           url: 'http://localhost:3000/api/user/signup',
           data
         })
-        draft.data = resp.data.user
+        draft.data = resp.data
         navigation('/auth/login')
       } catch (err) {
         renderErrors(err)
@@ -56,8 +59,8 @@ export function AuthProvider({ children }) {
           url: 'http://localhost:3000/api/user/login',
           data
         })
-        draft.data = resp.data.user
-        navigation('/guitars')
+        draft.data = resp.data
+        navigation('/')
       } catch (err) {
         renderErrors(err)
       }
