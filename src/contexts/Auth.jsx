@@ -78,7 +78,7 @@ export function AuthProvider({ children }) {
         draft.data = null
         navigation('/auth/login')
       } catch (err) {
-        console.log(err) // eslint-disable-line
+        renderErrors(err)
       }
     }))
   }
