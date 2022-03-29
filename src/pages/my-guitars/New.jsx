@@ -1,8 +1,22 @@
 import React from 'react'
 
+import { useMyGuitars } from '@/contexts/MyGuitars'
+
+import FormsGuitarsChange from '@/forms/guitars/Change'
+
+import LayoutsHeader from '@/layouts/Header'
+
 function PagesMyGuitarsNew() {
+  const { createMyGuitar } = useMyGuitars()
+
   return (
-    <h1>New Guitar</h1>
+    <div id="pages-new-guitar" className="container">
+      <LayoutsHeader />
+      <h4 className="text-center pb-3">Post Guitar</h4>
+      <FormsGuitarsChange
+        onSubmit={createMyGuitar}
+      />
+    </div>
   )
 }
 

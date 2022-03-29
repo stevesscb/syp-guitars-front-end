@@ -1,0 +1,107 @@
+import React, { useState, createContext, useContext } from 'react'
+import axios from 'axios'
+import produce from 'immer'
+import { useNavigate } from 'react-router-dom'
+
+import { renderErrors } from '@/contexts/_utils'
+
+const MyGuitarsContext = createContext()
+
+const initialIndex = { data: [], error: null, loading: true }
+const initialShow = { data: null, error: null, loading: true }
+
+export function MyGuitarsProvider({ children }) {
+  const navigation = useNavigate()
+  const [indexState, setIndexState] = useState(initialIndex)
+  const [showState, setShowState] = useState(initialShow)
+
+  const getMyGuitars = async () => {
+    setIndexState(initialIndex)
+    setIndexState(await produce(initialIndex, async (draft) => {
+      try {
+        const resp = await axios({
+          method: 'GET',
+          url: 'https://localhost:3000/api/my/guitars'
+        })
+        draft.data = resp.data.guitars
+      } catch (err) {
+        draft.error = err.response.data
+        renderErrors(err)
+      } finally {
+        draft.loading = false
+      }
+    }))
+  }
+
+  const getMyGuitar = async (id) => {
+    setShowState(initialShow)
+    setShowState(await produce(initialShow, async (draft) => {
+      try {
+        const resp = await axios({
+          method: 'GET',
+          url: `https://localhost:3000/api/my/guitars/${id}`
+        })
+        draft.data = resp.data.guitar
+      } catch (err) {
+        draft.error = err.response.data
+        renderErrors(err)
+      } finally {
+        draft.loading = false
+      }
+    }))
+  }
+
+  const createMyGuitar = async (data) => {
+    try {
+      const resp = await axios({
+        method: 'POST',
+        url: 'http://localhost:3000/api/my/guitars/create',
+        data
+      })
+      navigation(`/my/guitars/${resp.data.guitar.id}`)
+    } catch (err) {
+      renderErrors(err)
+    }
+  }
+
+  const updateMyGuitar = async (data) => {
+    try {
+      const resp = await axios({
+        method: 'PUT',
+        url: `https://localhost:3000/api/my/guitars/${data.id}`,
+        data
+      })
+      navigation(`/my/guitars/${resp.data.guitar.id}`)
+    } catch (err) {
+      renderErrors(err)
+    }
+  }
+
+  const deleteMyGuitar = async (data) => {
+    try {
+      await axios({
+        method: 'DELETE',
+        url: `https://localhost:3000/api/my/guitars/${data.id}`
+      })
+      navigation('/my/guitars')
+    } catch (err) {
+      renderErrors(err)
+    }
+  }
+
+  const contextData = {
+    index: indexState,
+    getMyGuitars,
+    show: showState,
+    getMyGuitar,
+    createMyGuitar,
+    updateMyGuitar,
+    deleteMyGuitar
+  }
+
+  return <MyGuitarsContext.Provider value={contextData}>{children}</MyGuitarsContext.Provider>
+}
+
+export function useMyGuitars() {
+  return useContext(MyGuitarsContext)
+}

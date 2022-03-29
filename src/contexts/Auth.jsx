@@ -15,13 +15,15 @@ export function AuthProvider({ children }) {
 
   // also. every time you refresh, you need to call getMyProfile.
   // check the lab solution for more info
+  // you did you put any url to your app.
+  // so by default its going to whatever your browser url is.
   const getMyProfile = async (updateInBackground) => {
     if (!updateInBackground) setShowState(initialShow)
     setShowState(await produce(updateInBackground ? initialShow : showState, async (draft) => {
       try {
         const resp = await axios({
           method: 'GET',
-          url: ''
+          url: 'http://localhost:3000/api/my/profile'
         })
         draft.data = resp.data
       } catch (err) {
