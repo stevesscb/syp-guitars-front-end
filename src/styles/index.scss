@@ -1,5 +1,4 @@
 @import "~bootstrap/scss/bootstrap";
-
 @import '~react-toastify/dist/ReactToastify';
 
 * {
@@ -8,12 +7,16 @@
   box-sizing: border-box;
 }
 
+#footer {
+  background-color: rgb(60, 60, 60, 0.8)
+}
+
 .carousel-item {
-  background-color: black;
+  background-color: rgb(60, 60, 60);
 }
 
 .bg-overlay {
-  background-image: url(/src/public/images/bg2.jpg);
+  background-image: url("/src/images/bg2.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

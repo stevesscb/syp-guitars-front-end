@@ -2,6 +2,7 @@ import React, { useState, createContext, useContext } from 'react'
 import axios from 'axios'
 import produce from 'immer'
 import { useNavigate } from 'react-router-dom'
+import { serialize } from 'object-to-formdata'
 
 import { renderErrors } from '@/contexts/_utils'
 
@@ -56,7 +57,7 @@ export function MyGuitarsProvider({ children }) {
       const resp = await axios({
         method: 'POST',
         url: 'http://localhost:3000/api/my/guitars/create',
-        data
+        data: serialize(data, { indices: true })
       })
       navigation(`/my/guitars/${resp.data.guitar.id}`)
     } catch (err) {
@@ -69,7 +70,7 @@ export function MyGuitarsProvider({ children }) {
       const resp = await axios({
         method: 'PUT',
         url: `https://localhost:3000/api/my/guitars/${data.id}`,
-        data
+        data: serialize(data, { indices: true })
       })
       navigation(`/my/guitars/${resp.data.guitar.id}`)
     } catch (err) {

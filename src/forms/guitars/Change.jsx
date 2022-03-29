@@ -24,7 +24,10 @@ function FormsGuitarsChange(props) {
           model: Yup.string().required().label('Model'),
           year: Yup.number().label('Year'),
           price: Yup.number().label('Price'),
-          description: Yup.string().label('Description')
+          description: Yup.string().label('Description'),
+          images: Yup.array().of(Yup.object({
+            url: Yup.mixed().required().label('Image File')
+          }))
         })
       }
     >
