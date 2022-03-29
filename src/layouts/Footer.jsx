@@ -14,12 +14,11 @@ function LayoutsFooter() {
   const navigate = useNavigate()
 
   return (
-    <footer id="footer" className="bd-footer py-5 mt-5">
+    <footer id="footer" className="bd-footer py-5 mt-5 text-center">
       {
         whitelist.filter((urlPiece) => location.pathname.includes(urlPiece)).length > 0 && (
           <Button
-            className="align-center"
-            variant="secondary"
+            variant="primary"
             size="sm"
             onClick={() => navigate(-1)}
           >Back</Button>
@@ -29,7 +28,7 @@ function LayoutsFooter() {
         <div className="row">
           <div className="col-lg-3 mb-3">
             <a className="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="/" aria-label="Bootstrap">
-              <span className="fs-5">S. Y. P.    G U I T A R S</span>
+              <span className="fs-5" style={{ fontFamily: 'Gloria Hallelujah' }}>S. Y. P.    G U I T A R S</span>
             </a>
             <ul className="list-unstyled small text-muted">
               <img src={FBLink} className="m-3" alt="facebook logo" />

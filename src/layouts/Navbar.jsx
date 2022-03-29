@@ -12,7 +12,7 @@ function LayoutsNavbar() {
   const { show: { data: currentUser }, logout } = useAuth()
 
   return (
-    <Navbar style={{ backgroundColor: 'rgb(149, 123, 94)', minHeight: '100px' }} expand="lg">
+    <Navbar style={{ backgroundColor: 'rgb(149, 123, 94)' }} expand="lg">
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

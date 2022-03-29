@@ -132,7 +132,7 @@ function FormsGuitarsChange(props) {
               />
             </div>
 
-            <button className="btn btn-primary float-end" type="submit" disabled={isSubmitting}>Submit</button>
+            <button className="btn btn-primary" type="submit" disabled={isSubmitting}>Submit</button>
           </Form>
         )
       }
