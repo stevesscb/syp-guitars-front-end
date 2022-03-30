@@ -22,11 +22,11 @@ export function MyGuitarsProvider({ children }) {
       try {
         const resp = await axios({
           method: 'GET',
-          url: 'https://localhost:3000/api/my/guitars'
+          url: 'http://localhost:3000/api/my/guitars'
         })
-        draft.data = resp.data.guitars
+        draft.data = resp.data
       } catch (err) {
-        draft.error = err.response.data
+        // draft.error = err.response.data
         renderErrors(err)
       } finally {
         draft.loading = false

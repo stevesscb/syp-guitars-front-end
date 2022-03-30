@@ -7,6 +7,7 @@ import { useAuth } from '@/contexts/Auth'
 import Loading from '@/components/Loading'
 import LayoutsNavbar from './Navbar'
 import LayoutsFooter from './Footer'
+import LayoutsHeader from './Header'
 
 function App() {
   const { show: { loading }, getMyProfile } = useAuth()
@@ -18,6 +19,7 @@ function App() {
   return (
     <>
       <LayoutsNavbar />
+      <LayoutsHeader />
       { loading ? <Loading /> : <Outlet />}
       <ToastContainer
         position="top-right"

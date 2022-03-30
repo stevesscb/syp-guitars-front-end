@@ -42,7 +42,7 @@ function FormsGuitarsChange(props) {
                 placeholder="Type: 'Fender'"
                 as="select"
               >
-                <option value="">Select One Type</option>
+                <option value="">Type: select one</option>
                 <option value="ACOUSTIC">Acoustic</option>
                 <option value="ELECTRIC">Electric</option>
               </Field>
@@ -60,7 +60,7 @@ function FormsGuitarsChange(props) {
                 placeholder="Make: 'Fender'"
                 as="select"
               >
-                <option value="">Select One Maker</option>
+                <option value="">Make: Select one</option>
                 <option value="Fender">Fender</option>
                 <option value="Gibson">Gibson</option>
                 <option value="Others">Others</option>
@@ -170,7 +170,7 @@ function FormsGuitarsChange(props) {
                     <div className="text-center mb-3">
                       <button
                         id="addButton"
-                        className="btn btn-info"
+                        className="btn btn-light"
                         type="button"
                         onClick={() => push({ url: null })}
                       >Add Image</button>

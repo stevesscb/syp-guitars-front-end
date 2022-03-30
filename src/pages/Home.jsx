@@ -2,14 +2,12 @@
 import React from 'react'
 
 import ComponentsCarousel from '@/components/Carousel'
-import LayoutsHeader from '@/layouts/Header'
 
 import Logo from '@/images/pngwing.png'
 
 function PagesHome() {
   return (
     <div id="pages-home" className="container">
-      <LayoutsHeader />
       <h4 style={{ fontFamily: 'Palette Mosaic', fontSize: '2em', textAlign: 'center' }}>Currently for sale!</h4>
       <ComponentsCarousel />
       <div id="bio" className="m-5">
