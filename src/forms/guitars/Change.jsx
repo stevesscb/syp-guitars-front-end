@@ -1,5 +1,5 @@
 import React from 'react'
-import { Formik, Field, Form, ErrorMessage } from 'formik'
+import { Formik, Field, Form, ErrorMessage, FieldArray } from 'formik'
 import * as Yup from 'yup'
 
 const initialValues = {
@@ -8,7 +8,8 @@ const initialValues = {
   model: '',
   year: '',
   price: '',
-  description: ''
+  description: '',
+  images: [{ url: null }]
 }
 
 function FormsGuitarsChange(props) {
@@ -32,10 +33,9 @@ function FormsGuitarsChange(props) {
       }
     >
       {
-        ({ errors: e, touched: t, isSubmitting }) => (
+        ({ values: v, errors: e, touched: t, isSubmitting, setFieldValue }) => (
           <Form>
             <div className="mb-3">
-              <label />
               <Field
                 className={`form-control ${e?.type && t?.type && 'is-invalid'}`}
                 name="type"
@@ -54,7 +54,6 @@ function FormsGuitarsChange(props) {
             </div>
 
             <div className="mb-3">
-              <label />
               <Field
                 className={`form-control ${e?.make && t?.make && 'is-invalid'}`}
                 name="make"
@@ -74,7 +73,6 @@ function FormsGuitarsChange(props) {
             </div>
 
             <div className="mb-3">
-              <label />
               <Field
                 className={`form-control ${e?.model && t?.model && 'is-invalid'}`}
                 name="model"
@@ -88,7 +86,6 @@ function FormsGuitarsChange(props) {
             </div>
 
             <div className="mb-3">
-              <label />
               <Field
                 className={`form-control ${e?.year && t?.year && 'is-invalid'}`}
                 name="year"
@@ -103,7 +100,6 @@ function FormsGuitarsChange(props) {
             </div>
 
             <div className="mb-3">
-              <label />
               <Field
                 className={`form-control ${e?.price && t?.price && 'is-invalid'}`}
                 name="price"
@@ -118,7 +114,6 @@ function FormsGuitarsChange(props) {
             </div>
 
             <div className="mb-3">
-              <label />
               <Field
                 as="textarea"
                 className={`form-control ${e?.description && t?.description && 'is-invalid'}`}
@@ -132,7 +127,60 @@ function FormsGuitarsChange(props) {
               />
             </div>
 
-            <button className="btn btn-primary" type="submit" disabled={isSubmitting}>Submit</button>
+            <FieldArray name="images">
+              {
+                ({ remove, push }) => (
+                  <div className="images-wrapper">
+                    <div className="d-flex justify-content-start flex-wrap">
+                      {
+                        v.images.map((image, i) => (
+                          <div key={i} className="col col-md-6">
+                            <div className="input-group mb-3 justify-content-center">
+                              <label
+                                className="input-group-text overflow-hidden"
+                                htmlFor={`images-${i}-url`}
+                                style={{ width: 'calc(100% - 35px)' }}
+                              >
+                                {
+                                  image?.url?.name || `Choose file ${i + 1}`
+                                }
+                              </label>
+                              <input
+                                id={`images-${i}-url`}
+                                className={`form-control ${e?.images?.[i]?.url && t?.images?.[i]?.url && 'is-invalid'} d-none`}
+                                type="file"
+                                onChange={(event) => setFieldValue(`images[${i}].url`, event.currentTarget.files[0])}
+                              />
+                              <button
+                                className="btn btn-danger"
+                                type="button"
+                                onClick={() => remove(i)}
+                              >X</button>
+                              <ErrorMessage
+                                className="invalid-feedback text-center"
+                                name={`images[${i}].url`}
+                                component="div"
+                              />
+                            </div>
+                          </div>
+                        ))
+                      }
+                    </div>
+
+                    <div className="text-center mb-3">
+                      <button
+                        id="addButton"
+                        className="btn btn-info"
+                        type="button"
+                        onClick={() => push({ url: null })}
+                      >Add Image</button>
+                    </div>
+                  </div>
+                )
+              }
+            </FieldArray>
+
+            <button className="btn btn-success" type="submit" disabled={isSubmitting}>POST</button>
           </Form>
         )
       }

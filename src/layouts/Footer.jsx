@@ -6,8 +6,9 @@ import FBLink from '@/images/fb.png'
 import IgLink from '@/images/ig.png'
 import WaLink from '@/images/wa.png'
 import YtLink from '@/images/yt.png'
+import GuitarIcon from '@/images/guitar-icon.png'
 
-const whitelist = ['/guitars/electric/', '/guitars/acoustic/']
+const whitelist = ['/guitars/electric/', '/guitars/acoustic/', '/my/guitars/new']
 
 function LayoutsFooter() {
   const location = useLocation()
@@ -80,6 +81,7 @@ function LayoutsFooter() {
           </div>
         </div>
       </div>
+      <img src={GuitarIcon} alt="guitar icon" />
     </footer>
   )
 }
