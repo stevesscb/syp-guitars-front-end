@@ -5,6 +5,7 @@ import Carousel from 'react-bootstrap/Carousel'
 function ComponentsCarousel() {
   return (
     <Carousel>
+
       <Carousel.Item>
         <img
           id="carousel-image"
@@ -18,6 +19,7 @@ function ComponentsCarousel() {
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
+
       <Carousel.Item>
         <img
           id="carousel-image"
@@ -26,12 +28,12 @@ function ComponentsCarousel() {
           src="https://img.kytary.com/eshop_ie/velky_v2/na/637535882124930000/57b00f5d/64842348/fender-1972-stratocaster.jpg"
           alt="Second slide"
         />
-
         <Carousel.Caption>
           <h3>Second slide label</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
+
       <Carousel.Item>
         <img
           id="carousel-image"

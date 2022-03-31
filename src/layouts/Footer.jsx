@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 
 import FBLink from '@/images/fb.png'
 import IgLink from '@/images/ig.png'
@@ -8,9 +8,9 @@ import WaLink from '@/images/wa.png'
 import YtLink from '@/images/yt.png'
 import GuitarIcon from '@/images/guitar-icon.png'
 
-const whitelist = ['/guitars/electric/', '/guitars/acoustic/', '/my/guitars/new']
-
 function LayoutsFooter() {
+  const { id } = useParams()
+  const whitelist = ['/guitars/electric/', '/guitars/acoustic/', '/my/guitars/new', `/my/guitars/${id}`]
   const location = useLocation()
   const navigate = useNavigate()
 

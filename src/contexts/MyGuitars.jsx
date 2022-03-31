@@ -40,9 +40,9 @@ export function MyGuitarsProvider({ children }) {
       try {
         const resp = await axios({
           method: 'GET',
-          url: `https://localhost:3000/api/my/guitars/${id}`
+          url: `http://localhost:3000/api/my/guitars/${id}`
         })
-        draft.data = resp.data.guitar
+        draft.data = resp.data
       } catch (err) {
         draft.error = err.response.data
         renderErrors(err)
@@ -59,7 +59,7 @@ export function MyGuitarsProvider({ children }) {
         url: 'http://localhost:3000/api/my/guitars/create',
         data: serialize(data, { indices: true })
       })
-      navigation(`/my/guitars/${resp.data.guitar.id}`)
+      navigation(`/my/guitars/${resp.data.id}`)
     } catch (err) {
       renderErrors(err)
     }
@@ -69,7 +69,7 @@ export function MyGuitarsProvider({ children }) {
     try {
       const resp = await axios({
         method: 'PUT',
-        url: `https://localhost:3000/api/my/guitars/${data.id}`,
+        url: `http://localhost:3000/api/my/guitars/${data.id}`,
         data: serialize(data, { indices: true })
       })
       navigation(`/my/guitars/${resp.data.guitar.id}`)
@@ -82,7 +82,7 @@ export function MyGuitarsProvider({ children }) {
     try {
       await axios({
         method: 'DELETE',
-        url: `https://localhost:3000/api/my/guitars/${data.id}`
+        url: `http://localhost:3000/api/my/guitars/${data.id}`
       })
       navigation('/my/guitars')
     } catch (err) {

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
 import React, { useEffect } from 'react'
-import { useNavigate, NavLink } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Row, Col } from 'react-bootstrap'
 import Card from 'react-bootstrap/Card'
 import ListGroupItem from 'react-bootstrap/CardGroup'
@@ -14,16 +14,14 @@ function PagesMyGuitarsIndex() {
   const navigate = useNavigate()
   const { index: { data: myGuitars }, getMyGuitars } = useMyGuitars()
 
-  console.log(myGuitars)
-
   useEffect(() => {
     getMyGuitars()
   }, [])
 
   return (
-    <div id="pages-my-guitars-index" className="container">
-      <h4 className="text-center pb-3" style={{ fontFamily: 'Palette Mosaic' }}>My Guitars</h4>
+    <div id="pages-my-guitars-index" className="container d-flex justify-content-center">
       <Row xs={1} md={3} className="g-4">
+        <h4 className="text-center pb-3" style={{ fontFamily: 'Palette Mosaic' }}>My Guitars</h4>
         {
           myGuitars.map((myGuitar) => (
             <Col className="d-flex justify-content-center">
@@ -39,7 +37,7 @@ function PagesMyGuitarsIndex() {
                   </ListGroup>
                 </Card.Body>
                 <Card.Body style={{ backgroundColor: '#ECF0F1' }}>
-                  <Button as={NavLink} to=":id" variant="success" size="sm" active>
+                  <Button key={myGuitar.id} onClick={() => navigate(`/my/guitars/${myGuitar.id}`)}>
                     More...
                   </Button>
                 </Card.Body>
