@@ -20,6 +20,7 @@ import PagesGuitarsAcoustic from '@/pages/guitars/acoustic'
 import PagesMyGuitarsIndex from '@/pages/my-guitars/Index'
 import PagesMyGuitarsNew from '@/pages/my-guitars/New'
 import PagesMyGuitarsShow from '@/pages/my-guitars/Show'
+import PagesMyGuitarsEdit from '@/pages/my-guitars/Edit'
 
 import PagesAnother from '@/pages/Another'
 import PagesNotFound from '@/pages/NotFound'
@@ -43,6 +44,7 @@ function Routing() {
               <Route path="/my/guitars" element={<AuthRoute><PagesMyGuitarsIndex /></AuthRoute>} />
               <Route path="/my/guitars/new" element={<AuthRoute><PagesMyGuitarsNew /></AuthRoute>} />
               <Route path="/my/guitars/:id" element={<AuthRoute><PagesMyGuitarsShow /></AuthRoute>} />
+              <Route path="/my/guitars/:id/edit" element={<AuthRoute><PagesMyGuitarsEdit /></AuthRoute>} />
 
               <Route path="/another" element={<PagesAnother />} />
               <Route path="*" element={<PagesNotFound />} />

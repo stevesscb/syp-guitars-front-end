@@ -19,10 +19,11 @@ function PagesMyGuitarsIndex() {
   }, [])
 
   return (
-    <div id="pages-my-guitars-index" className="container d-flex justify-content-center">
-      <Row xs={1} md={3} className="g-4">
-        <h4 className="text-center pb-3" style={{ fontFamily: 'Palette Mosaic' }}>My Guitars</h4>
-        {
+    <div className="my-guitars-pages-caption">
+      <h4 className="text-center pb-3" style={{ fontFamily: 'Palette Mosaic' }}>My Guitars</h4>
+      <div id="pages-my-guitars-index" className="container d-flex justify-content-center">
+        <Row xs={1} md={3} className="g-4">
+          {
           myGuitars.map((myGuitar) => (
             <Col className="d-flex justify-content-center">
               <Card border="dark" style={{ width: '30rem' }}>
@@ -45,7 +46,8 @@ function PagesMyGuitarsIndex() {
             </Col>
           ))
         }
-      </Row>
+        </Row>
+      </div>
     </div>
 
   )

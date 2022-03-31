@@ -8,7 +8,7 @@ function PagesMyGuitarsNew() {
   const { createMyGuitar } = useMyGuitars()
 
   return (
-    <div id="pages-new-guitar" className="container">
+    <div id="pages-new-guitar" className="container" style={{ maxWidth: '600px' }}>
       <h4 className="text-center pb-3" style={{ fontFamily: 'Palette Mosaic' }}>Post Guitar</h4>
       <FormsGuitarsChange
         onSubmit={createMyGuitar}
