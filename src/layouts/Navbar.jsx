@@ -23,10 +23,7 @@ function LayoutsNavbar() {
                 <>
                   <Nav.Link as={NavLink} to="/my/guitars">My Guitars</Nav.Link>
                   <Nav.Link as={NavLink} to="/my/guitars/new">Post Guitar</Nav.Link>
-                  <NavDropdown title="Guitars" id="basic-nav-dropdown">
-                    <NavDropdown.Item as={NavLink} to="/guitars/electric">Electric</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to="/guitars/acoustic">Acoustic</NavDropdown.Item>
-                  </NavDropdown>
+                  <Nav.Link as={NavLink} to="/guitars">For Sale</Nav.Link>
                   <Nav.Link onClick={logout}>Logout</Nav.Link>
                 </>
               ) : (

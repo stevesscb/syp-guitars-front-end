@@ -15,8 +15,8 @@ function ComponentsCarousel() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>1990 Stratocaster</h3>
+          <p>$13000</p>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -29,8 +29,8 @@ function ComponentsCarousel() {
           alt="Second slide"
         />
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>2005 Stratocaster</h3>
+          <p>$7500</p>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -44,8 +44,8 @@ function ComponentsCarousel() {
         />
 
         <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <h3>2002 Stratocaster</h3>
+          <p>$10,000</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -58,8 +58,8 @@ function ComponentsCarousel() {
         />
 
         <Carousel.Caption>
-          <h3>Fourth slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>1980 Stratocaster</h3>
+          <p>$25,000</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -72,8 +72,8 @@ function ComponentsCarousel() {
         />
 
         <Carousel.Caption>
-          <h3>Fifth slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>1960 Stratocaster</h3>
+          <p>$50,000</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -86,8 +86,8 @@ function ComponentsCarousel() {
         />
 
         <Carousel.Caption>
-          <h3>Sixth slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>2020 Stratocaster</h3>
+          <p>$16,000</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -100,8 +100,8 @@ function ComponentsCarousel() {
         />
 
         <Carousel.Caption>
-          <h3>Seventh slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>2009 Les Paul</h3>
+          <p>$90,000</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -114,8 +114,8 @@ function ComponentsCarousel() {
         />
 
         <Carousel.Caption>
-          <h3>Eighth slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>2000 Fender Telecaster</h3>
+          <p>$18,000</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -128,8 +128,8 @@ function ComponentsCarousel() {
         />
 
         <Carousel.Caption>
-          <h3>Ninth slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>1999 Telecaster Custom</h3>
+          <p>$22,000</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -142,8 +142,8 @@ function ComponentsCarousel() {
         />
 
         <Carousel.Caption>
-          <h3>Tenth slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>2006 Telecaster</h3>
+          <p>$12,000</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>

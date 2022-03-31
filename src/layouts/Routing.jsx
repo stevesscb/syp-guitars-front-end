@@ -3,7 +3,7 @@ import { Routes, BrowserRouter, Route } from 'react-router-dom'
 
 import { AuthProvider } from '@/contexts/Auth'
 import { MyGuitarsProvider } from '@/contexts/MyGuitars'
-// import { GuitarsProvider } from '@/contexts/Guitars'
+import { GuitarsProvider } from '@/contexts/Guitars'
 
 import App from '@/layouts/App'
 import AuthRoute from '@/layouts/AuthRoute'
@@ -14,6 +14,7 @@ import PagesHome from '@/pages/Home'
 import PagesAuthSignup from '@/pages/auth/Signup'
 import PagesAuthLogin from '@/pages/auth/Login'
 
+import PagesGuitarsIndex from '@/pages/guitars/Index'
 import PagesGuitarsElectric from '@/pages/guitars/electric'
 import PagesGuitarsAcoustic from '@/pages/guitars/acoustic'
 
@@ -30,27 +31,31 @@ function Routing() {
     <BrowserRouter>
       <AuthProvider>
         <MyGuitarsProvider>
-          <Routes>
+          <GuitarsProvider>
 
-            <Route path="/" element={<App />}>
-              <Route index element={<PagesHome />} />
+            <Routes>
 
-              <Route path="/auth/signup" element={<NoAuthRoute><PagesAuthSignup /></NoAuthRoute>} />
-              <Route path="/auth/login" element={<NoAuthRoute><PagesAuthLogin /></NoAuthRoute>} />
+              <Route path="/" element={<App />}>
+                <Route index element={<PagesHome />} />
 
-              <Route path="/guitars/electric" element={<PagesGuitarsElectric />} />
-              <Route path="/guitars/acoustic" element={<PagesGuitarsAcoustic />} />
+                <Route path="/auth/signup" element={<NoAuthRoute><PagesAuthSignup /></NoAuthRoute>} />
+                <Route path="/auth/login" element={<NoAuthRoute><PagesAuthLogin /></NoAuthRoute>} />
 
-              <Route path="/my/guitars" element={<AuthRoute><PagesMyGuitarsIndex /></AuthRoute>} />
-              <Route path="/my/guitars/new" element={<AuthRoute><PagesMyGuitarsNew /></AuthRoute>} />
-              <Route path="/my/guitars/:id" element={<AuthRoute><PagesMyGuitarsShow /></AuthRoute>} />
-              <Route path="/my/guitars/:id/edit" element={<AuthRoute><PagesMyGuitarsEdit /></AuthRoute>} />
+                <Route path="/guitars" element={<PagesGuitarsIndex />} />
+                <Route path="/guitars/electric" element={<PagesGuitarsElectric />} />
+                <Route path="/guitars/acoustic" element={<PagesGuitarsAcoustic />} />
 
-              <Route path="/another" element={<PagesAnother />} />
-              <Route path="*" element={<PagesNotFound />} />
-            </Route>
+                <Route path="/my/guitars" element={<AuthRoute><PagesMyGuitarsIndex /></AuthRoute>} />
+                <Route path="/my/guitars/new" element={<AuthRoute><PagesMyGuitarsNew /></AuthRoute>} />
+                <Route path="/my/guitars/:id" element={<AuthRoute><PagesMyGuitarsShow /></AuthRoute>} />
+                <Route path="/my/guitars/:id/edit" element={<AuthRoute><PagesMyGuitarsEdit /></AuthRoute>} />
 
-          </Routes>
+                <Route path="/another" element={<PagesAnother />} />
+                <Route path="*" element={<PagesNotFound />} />
+              </Route>
+
+            </Routes>
+          </GuitarsProvider>
         </MyGuitarsProvider>
       </AuthProvider>
     </BrowserRouter>
