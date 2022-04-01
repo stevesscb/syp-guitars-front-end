@@ -10,7 +10,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, '../public'),
-    filename: '[name].[fullhash].js'
+    filename: '[name].[fullhash].js',
+    publicPath: '/'
   },
   resolve: {
     alias: {
