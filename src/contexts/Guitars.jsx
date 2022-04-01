@@ -17,7 +17,7 @@ export function GuitarsProvider({ children }) {
       try {
         const resp = await axios({
           method: 'GET',
-          url: 'http://localhost:3000/api/guitars'
+          url: `${process.env.API_URL}/api/guitars`
         })
         draft.data = resp.data
       } catch (err) {
@@ -34,7 +34,7 @@ export function GuitarsProvider({ children }) {
       try {
         const resp = await axios({
           method: 'GET',
-          url: `http://localhost:3000/api/guitars/${id}`
+          url: `${process.env.API_URL}/api/guitars/${id}`
         })
         draft.data = resp.data
       } catch (err) {

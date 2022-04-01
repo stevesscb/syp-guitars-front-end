@@ -18,14 +18,11 @@ function ComponentsCarousel() {
           guitar.images.map((image) => (
             <Carousel.Item>
               <img
+                id="carousel-images-home"
                 className="d-block w-100"
                 src={image.url}
                 alt="First slide"
               />
-              <Carousel.Caption>
-                <h3 />
-                <p />
-              </Carousel.Caption>
             </Carousel.Item>
           ))
         ))

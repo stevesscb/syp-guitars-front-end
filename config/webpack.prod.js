@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -63,6 +64,9 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'styles/styles.[hash].css'
+    }),
+    new webpack.DefinePlugin({
+      'process.env.API_URL': JSON.stringify('https://syp-guitars-api.herokuapp.com')
     })
   ]
 }

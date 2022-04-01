@@ -12,7 +12,14 @@
 }
 
 .carousel-item {
-  background-color: rgb(60, 60, 60);
+  background-color: rgb(60, 60, 60, 0.3);
+}
+
+#carousel-images-home {
+  max-height: 650px;
+  background-size: contain;
+  object-fit: contain;
+  background-color: black;
 }
 
 .bg-overlay {

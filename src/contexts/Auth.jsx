@@ -23,7 +23,7 @@ export function AuthProvider({ children }) {
       try {
         const resp = await axios({
           method: 'GET',
-          url: 'http://localhost:3000/api/my/profile'
+          url: `${process.env.API_URL}/api/my/profile`
         })
         draft.data = resp.data
       } catch (err) {
@@ -41,7 +41,7 @@ export function AuthProvider({ children }) {
       try {
         const resp = await axios({
           method: 'POST',
-          url: 'http://localhost:3000/api/user/signup',
+          url: `${process.env.API_URL}/api/user/signup`,
           data
         })
         draft.data = resp.data
@@ -58,7 +58,7 @@ export function AuthProvider({ children }) {
       try {
         const resp = await axios({
           method: 'POST',
-          url: 'http://localhost:3000/api/user/login',
+          url: `${process.env.API_URL}/api/user/login`,
           data
         })
         draft.data = resp.data
@@ -75,7 +75,7 @@ export function AuthProvider({ children }) {
       try {
         await axios({
           method: 'DELETE',
-          url: 'http://localhost:3000/api/user/logout'
+          url: `${process.env.API_URL}/api/user/logout`
         })
         draft.data = null
         navigation('/auth/login')
