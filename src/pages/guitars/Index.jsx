@@ -20,7 +20,7 @@ function PagesGuitarsIndex() {
 
   return (
     <div className="my-guitars-pages-caption">
-      <h4 className="text-center pb-3" style={{ fontFamily: 'Palette Mosaic' }}>Guitars</h4>
+      <h4 className="text-center pb-3" style={{ fontFamily: 'Palette Mosaic' }}>For Sale</h4>
       <div id="pages-my-guitars-index" className="container d-flex justify-content-center">
         <Row xs={1} md={3} className="g-4">
           {
@@ -38,7 +38,7 @@ function PagesGuitarsIndex() {
                   </ListGroup>
                 </Card.Body>
                 <Card.Body style={{ backgroundColor: '#ECF0F1' }}>
-                  <Button key={guitar.id} onClick={() => navigate(`/my/guitars/${guitar.id}`)}>
+                  <Button key={guitar.id} onClick={() => navigate(`/guitars/${guitar.id}`)}>
                     More...
                   </Button>
                 </Card.Body>

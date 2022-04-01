@@ -15,8 +15,7 @@ import PagesAuthSignup from '@/pages/auth/Signup'
 import PagesAuthLogin from '@/pages/auth/Login'
 
 import PagesGuitarsIndex from '@/pages/guitars/Index'
-import PagesGuitarsElectric from '@/pages/guitars/electric'
-import PagesGuitarsAcoustic from '@/pages/guitars/acoustic'
+import PagesGuitarsShow from '@/pages/guitars/Show'
 
 import PagesMyGuitarsIndex from '@/pages/my-guitars/Index'
 import PagesMyGuitarsNew from '@/pages/my-guitars/New'
@@ -36,14 +35,13 @@ function Routing() {
             <Routes>
 
               <Route path="/" element={<App />}>
-                <Route index element={<PagesHome />} />
+                <Route index element={<PagesGuitarsIndex />} />
 
                 <Route path="/auth/signup" element={<NoAuthRoute><PagesAuthSignup /></NoAuthRoute>} />
                 <Route path="/auth/login" element={<NoAuthRoute><PagesAuthLogin /></NoAuthRoute>} />
 
-                <Route path="/guitars" element={<PagesGuitarsIndex />} />
-                <Route path="/guitars/electric" element={<PagesGuitarsElectric />} />
-                <Route path="/guitars/acoustic" element={<PagesGuitarsAcoustic />} />
+                <Route path="/about" element={<PagesHome />} />
+                <Route path="/guitars/:id" element={<PagesGuitarsShow />} />
 
                 <Route path="/my/guitars" element={<AuthRoute><PagesMyGuitarsIndex /></AuthRoute>} />
                 <Route path="/my/guitars/new" element={<AuthRoute><PagesMyGuitarsNew /></AuthRoute>} />

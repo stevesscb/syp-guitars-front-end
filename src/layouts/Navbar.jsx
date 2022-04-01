@@ -3,7 +3,6 @@ import React from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap/NavDropdown'
 import { NavLink } from 'react-router-dom'
 
 import { useAuth } from '@/contexts/Auth'
@@ -17,24 +16,20 @@ function LayoutsNavbar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={NavLink} to="/">Home</Nav.Link>
+            <Nav.Link as={NavLink} to="/">For Sale</Nav.Link>
             {
               currentUser ? (
                 <>
                   <Nav.Link as={NavLink} to="/my/guitars">My Guitars</Nav.Link>
                   <Nav.Link as={NavLink} to="/my/guitars/new">Post Guitar</Nav.Link>
-                  <Nav.Link as={NavLink} to="/guitars">For Sale</Nav.Link>
                   <Nav.Link onClick={logout}>Logout</Nav.Link>
+                  <Nav.Link as={NavLink} to="/about">About us</Nav.Link>
                 </>
               ) : (
                 <>
                   <Nav.Link as={NavLink} to="/auth/signup">Sign up</Nav.Link>
                   <Nav.Link as={NavLink} to="/auth/login">Log in</Nav.Link>
-
-                  <NavDropdown title="Guitars" id="basic-nav-dropdown">
-                    <NavDropdown.Item as={NavLink} to="/guitars/electric">Electric</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to="/guitars/acoustic">Acoustic</NavDropdown.Item>
-                  </NavDropdown>
+                  <Nav.Link as={NavLink} to="/about">About us</Nav.Link>
                 </>
               )
             }

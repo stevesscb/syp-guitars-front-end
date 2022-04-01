@@ -11,7 +11,6 @@ function PagesMyGuitarsShow() {
   const { id } = useParams()
   const { show: { data: myGuitar }, getMyGuitar, deleteMyGuitar } = useMyGuitars()
 
-  console.log(myGuitar)
   useEffect(() => {
     getMyGuitar(id)
   }, [])
