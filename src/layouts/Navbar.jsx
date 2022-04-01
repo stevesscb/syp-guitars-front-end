@@ -29,7 +29,7 @@ function LayoutsNavbar() {
                 <>
                   <Nav.Link as={NavLink} to="/auth/signup">Sign up</Nav.Link>
                   <Nav.Link as={NavLink} to="/auth/login">Log in</Nav.Link>
-                  <Nav.Link as={NavLink} to="/about">About us</Nav.Link>
+                  <Nav.Link as={NavLink} to="/about">About Us</Nav.Link>
                 </>
               )
             }

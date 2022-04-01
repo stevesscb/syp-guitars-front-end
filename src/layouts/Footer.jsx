@@ -10,7 +10,7 @@ import GuitarIcon from '@/images/guitar-icon.png'
 
 function LayoutsFooter() {
   const { id } = useParams()
-  const whitelist = ['/guitars/electric/', '/guitars/acoustic/', '/my/guitars/new', `/my/guitars/${id}`]
+  const whitelist = ['/guitars/electric/', '/guitars/acoustic/', '/my/guitars/new', `/my/guitars/${id}`, `/guitars/${id}`]
   const location = useLocation()
   const navigate = useNavigate()
 
