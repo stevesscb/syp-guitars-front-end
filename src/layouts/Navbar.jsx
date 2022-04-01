@@ -23,7 +23,7 @@ function LayoutsNavbar() {
                   <Nav.Link as={NavLink} to="/my/guitars">My Guitars</Nav.Link>
                   <Nav.Link as={NavLink} to="/my/guitars/new">Post Guitar</Nav.Link>
                   <Nav.Link onClick={logout}>Logout</Nav.Link>
-                  <Nav.Link as={NavLink} to="/about">About us</Nav.Link>
+                  <Nav.Link as={NavLink} to="/about">About Us</Nav.Link>
                 </>
               ) : (
                 <>

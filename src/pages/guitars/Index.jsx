@@ -26,7 +26,7 @@ function PagesGuitarsIndex() {
           {
           guitars.map((guitar) => (
             <Col className="d-flex justify-content-center">
-              <Card border="dark" style={{ width: '30rem' }}>
+              <Card border="dark" style={{ width: '23rem' }}>
                 <Card.Img variant="top" src={guitar?.images?.[0]?.url} className="justify-content-center" />
                 <Card.Body style={{ backgroundColor: '#ECF0F1' }}>
                   <Card.Title />
